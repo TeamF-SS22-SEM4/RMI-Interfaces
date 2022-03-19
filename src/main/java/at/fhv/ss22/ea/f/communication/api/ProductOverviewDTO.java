@@ -1,6 +1,8 @@
 package at.fhv.ss22.ea.f.communication.api;
 
-public class ProductOverviewDTO {
+import java.io.Serializable;
+
+public class ProductOverviewDTO implements Serializable {
     private String name;
 
     public ProductOverviewDTO(String name) {
