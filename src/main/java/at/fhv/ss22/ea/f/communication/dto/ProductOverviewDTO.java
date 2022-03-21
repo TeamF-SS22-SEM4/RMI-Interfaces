@@ -1,4 +1,4 @@
-package at.fhv.ec.javafxclient.application.dto;
+package at.fhv.ss22.ea.f.communication.dto;
 
 import java.util.Objects;
 
