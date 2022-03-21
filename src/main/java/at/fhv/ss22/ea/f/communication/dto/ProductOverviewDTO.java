@@ -1,9 +1,10 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
-public class ProductOverviewDTO {
+public class ProductOverviewDTO implements Serializable {
     private UUID productId;
     private String name;
     private String artistName; // should this be a list?
