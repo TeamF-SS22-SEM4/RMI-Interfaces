@@ -1,8 +1,9 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class ProductOverviewDTO {
+public class ProductOverviewDTO implements Serializable {
     private String name;
     private String artistName;
     private String releaseYear;
