@@ -1,10 +1,12 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class ProductOverviewDTO {
+    private UUID productId;
     private String name;
-    private String artistName;
+    private String artistName; // should this be a list?
     private String releaseYear;
 
     public static Builder builder() {
@@ -23,11 +25,20 @@ public class ProductOverviewDTO {
         return this.releaseYear;
     }
 
+    public UUID getProductId() {
+        return productId;
+    }
+
     public static class Builder {
         private final ProductOverviewDTO instance;
 
         private Builder() {
             this.instance = new ProductOverviewDTO();
+        }
+
+        public Builder withId(UUID id) {
+            this.instance.productId = id;
+            return this;
         }
 
         public Builder withName(String name) {
