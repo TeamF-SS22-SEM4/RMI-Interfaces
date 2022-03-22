@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public interface ProductSearchService extends Remote {
 
-    Optional<ProductDetailsDTO> productById(UUID productId);
+    Optional<ProductDetailsDTO> productById(UUID productId) throws RemoteException;
 
     List<ProductOverviewDTO> fullTextSearch(String query) throws RemoteException;
 }
