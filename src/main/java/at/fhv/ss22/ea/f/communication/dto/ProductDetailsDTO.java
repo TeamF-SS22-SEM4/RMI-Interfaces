@@ -13,7 +13,7 @@ public class ProductDetailsDTO {
     private String genre;
     private String duration;
     private List<SongDTO> songs;
-    //TODO soundcarrier related info
+    private List<SoundCarrierDTO> soundCarriers;
 
     private ProductDetailsDTO() {}
 
@@ -31,6 +31,11 @@ public class ProductDetailsDTO {
             Objects.requireNonNull(this.instance.productId);
             return this.instance;
         }
+        public Builder withSoundCarriers(List<SoundCarrierDTO> soundCarriers) {
+            this.instance.soundCarriers = soundCarriers;
+            return this;
+        }
+
         public Builder withId(UUID id) {
             this.instance.productId = id;
             return this;
@@ -95,5 +100,9 @@ public class ProductDetailsDTO {
 
     public List<SongDTO> getSongs() {
         return songs;
+    }
+
+    public List<SoundCarrierDTO> getSoundCarriers() {
+        return soundCarriers;
     }
 }
