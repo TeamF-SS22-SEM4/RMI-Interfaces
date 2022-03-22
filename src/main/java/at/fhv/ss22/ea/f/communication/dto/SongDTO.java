@@ -7,13 +7,17 @@ public class SongDTO {
     public String getTitle() {
         return title;
     }
+
     public String getDuration() {
         return duration;
     }
+
     public static Builder builder() {
         return new Builder();
     }
+
     private SongDTO() {}
+
     public static class Builder {
         private SongDTO instance;
 
@@ -21,17 +25,18 @@ public class SongDTO {
             this.instance = new SongDTO();
         }
 
-        public SongDTO build() {
-            return this.instance;
-        }
-
         public Builder withTitle(String title) {
             this.instance.title = title;
             return this;
         }
+
         public Builder withDuration(String duration) {
             this.instance.duration = duration;
             return this;
+        }
+
+        public SongDTO build() {
+            return this.instance;
         }
     }
 }

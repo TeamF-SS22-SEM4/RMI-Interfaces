@@ -17,18 +17,22 @@ public class SoundCarrierDTO {
         public Builder() {
             this.instance = new SoundCarrierDTO();
         }
+
         public Builder withSoundCarrierName(String name) {
             this.instance.soundCarrierName = name;
             return this;
         }
+
         public Builder withAvailableAmount(int amount) {
             this.instance.amountAvailable = amount;
             return this;
         }
+
         public Builder withPricePerCarrier(float price) {
             this.instance.pricePerCarrier = price;
             return this;
         }
+
         public SoundCarrierDTO build() {
             return this.instance;
         }

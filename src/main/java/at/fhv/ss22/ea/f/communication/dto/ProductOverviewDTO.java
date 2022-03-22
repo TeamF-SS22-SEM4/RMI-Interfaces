@@ -1,33 +1,21 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
 public class ProductOverviewDTO implements Serializable {
     private UUID productId;
     private String name;
-    private String artistName; // should this be a list?
+    private List<String> artistName;
     private String releaseYear;
+
+    // Private constructor so the builder is required to create an object
+    private ProductOverviewDTO() {}
 
     public static Builder builder() {
         return new Builder();
-    }
-
-    public String name() {
-        return this.name;
-    }
-
-    public String artistName() {
-        return this.artistName;
-    }
-
-    public String releaseYear() {
-        return this.releaseYear;
-    }
-
-    public UUID getProductId() {
-        return productId;
     }
 
     public static class Builder {
@@ -47,7 +35,7 @@ public class ProductOverviewDTO implements Serializable {
             return this;
         }
 
-        public Builder withArtistName(String artistName) {
+        public Builder withArtistName(List<String> artistName) {
             this.instance.artistName = artistName;
             return this;
         }
@@ -64,5 +52,21 @@ public class ProductOverviewDTO implements Serializable {
 
             return this.instance;
         }
+    }
+
+    public String name() {
+        return this.name;
+    }
+
+    public List<String> artistName() {
+        return this.artistName;
+    }
+
+    public String releaseYear() {
+        return this.releaseYear;
+    }
+
+    public UUID getProductId() {
+        return productId;
     }
 }

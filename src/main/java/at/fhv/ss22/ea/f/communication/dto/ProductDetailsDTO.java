@@ -27,10 +27,7 @@ public class ProductDetailsDTO {
         public Builder() {
             this.instance = new ProductDetailsDTO();
         }
-        public ProductDetailsDTO build() {
-            Objects.requireNonNull(this.instance.productId);
-            return this.instance;
-        }
+
         public Builder withSoundCarriers(List<SoundCarrierDTO> soundCarriers) {
             this.instance.soundCarriers = soundCarriers;
             return this;
@@ -40,33 +37,45 @@ public class ProductDetailsDTO {
             this.instance.productId = id;
             return this;
         }
+
         public Builder withName(String name) {
             this.instance.name = name;
             return this;
         }
+
         public Builder withArtistName(String name) {
             this.instance.artistName = name;
             return this;
         }
+
         public Builder withReleaseYear(String year) {
             this.instance.releaseYear = year;
             return this;
         }
+
         public Builder withLabelName(String labelName) {
             this.instance.labelName = labelName;
             return this;
         }
+
         public Builder withGenre(String genre) {
             this.instance.genre = genre;
             return this;
         }
+
         public Builder withDuration(String duration) {
             this.instance.duration = duration;
             return this;
         }
+
         public Builder withSongs(List<SongDTO> songs) {
             this.instance.songs = songs;
             return this;
+        }
+
+        public ProductDetailsDTO build() {
+            Objects.requireNonNull(this.instance.productId, "productId must be set in ProductDetailsDTO");
+            return this.instance;
         }
     }
 
