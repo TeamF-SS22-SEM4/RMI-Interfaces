@@ -1,6 +1,8 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
-public class SoundCarrierDTO {
+import java.io.Serializable;
+
+public class SoundCarrierDTO implements Serializable {
     private String soundCarrierName;
     private int amountAvailable;
     private float pricePerCarrier;

@@ -1,6 +1,8 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
-public class SongDTO {
+import java.io.Serializable;
+
+public class SongDTO implements Serializable {
     private String title;
     private String duration;
 

@@ -1,10 +1,11 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class ProductDetailsDTO {
+public class ProductDetailsDTO implements Serializable {
     private UUID productId;
     private String name;
     private String artistName;
