@@ -54,19 +54,19 @@ public class ProductOverviewDTO implements Serializable {
         }
     }
 
-    public String name() {
+    public UUID getProductId() {
+        return productId;
+    }
+
+    public String getName() {
         return this.name;
     }
 
-    public List<String> artistName() {
+    public List<String> getArtistName() {
         return this.artistName;
     }
 
-    public String releaseYear() {
+    public String getReleaseYear() {
         return this.releaseYear;
-    }
-
-    public UUID getProductId() {
-        return productId;
     }
 }

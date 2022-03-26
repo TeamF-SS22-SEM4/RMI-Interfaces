@@ -6,14 +6,6 @@ public class SongDTO implements Serializable {
     private String title;
     private String duration;
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDuration() {
-        return duration;
-    }
-
     public static Builder builder() {
         return new Builder();
     }
@@ -40,5 +32,13 @@ public class SongDTO implements Serializable {
         public SongDTO build() {
             return this.instance;
         }
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDuration() {
+        return duration;
     }
 }
