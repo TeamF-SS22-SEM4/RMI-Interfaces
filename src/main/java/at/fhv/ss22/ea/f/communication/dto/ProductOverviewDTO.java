@@ -8,7 +8,7 @@ import java.util.UUID;
 public class ProductOverviewDTO implements Serializable {
     private UUID productId;
     private String name;
-    private List<String> artistName;
+    private String artistName;
     private String releaseYear;
 
     // Private constructor so the builder is required to create an object
@@ -35,7 +35,7 @@ public class ProductOverviewDTO implements Serializable {
             return this;
         }
 
-        public Builder withArtistName(List<String> artistName) {
+        public Builder withArtistName(String artistName) {
             this.instance.artistName = artistName;
             return this;
         }
@@ -62,7 +62,7 @@ public class ProductOverviewDTO implements Serializable {
         return this.name;
     }
 
-    public List<String> getArtistName() {
+    public String getArtistName() {
         return this.artistName;
     }
 
