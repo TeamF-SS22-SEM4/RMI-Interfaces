@@ -1,8 +1,10 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public class SoundCarrierDTO implements Serializable {
+    private UUID soundCarrierId;
     private String soundCarrierName;
     private int amountAvailable;
     private float pricePerCarrier;
@@ -18,6 +20,11 @@ public class SoundCarrierDTO implements Serializable {
 
         public Builder() {
             this.instance = new SoundCarrierDTO();
+        }
+
+        public Builder withSoundCarrierId(UUID soundCarrierId) {
+            this.instance.soundCarrierId = soundCarrierId;
+            return this;
         }
 
         public Builder withSoundCarrierName(String name) {
@@ -38,6 +45,10 @@ public class SoundCarrierDTO implements Serializable {
         public SoundCarrierDTO build() {
             return this.instance;
         }
+    }
+
+    public UUID getSoundCarrierId() {
+        return soundCarrierId;
     }
 
     public String getSoundCarrierName() {
