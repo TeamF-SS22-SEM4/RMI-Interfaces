@@ -5,4 +5,6 @@ import java.rmi.RemoteException;
 
 public interface RMIFactory extends Remote {
     ProductSearchService getProductSearchService() throws RemoteException;
+
+    BuyingService getBuyingService() throws RemoteException;
 }
