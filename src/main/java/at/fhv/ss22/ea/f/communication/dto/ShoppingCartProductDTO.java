@@ -1,8 +1,9 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
+import java.io.Serializable;
 import java.util.UUID;
 
-public class ShoppingCartProductDTO {
+public class ShoppingCartProductDTO implements Serializable {
     private UUID productId;
     private UUID soundCarrierId;
     private String productName;
