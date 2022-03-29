@@ -1,5 +1,6 @@
 package at.fhv.ss22.ea.f.communication.api;
 
+import at.fhv.ss22.ea.f.communication.dto.ShoppingCartProductDTO;
 import at.fhv.ss22.ea.f.communication.dto.SoundCarrierAmountDTO;
 import at.fhv.ss22.ea.f.communication.dto.SoundCarrierDTO;
 import at.fhv.ss22.ea.f.communication.exception.CarrierNotAvailableException;
@@ -19,5 +20,5 @@ public interface BuyingService extends Remote {
      */
     UUID buy(List<SoundCarrierAmountDTO> soundCarriers, String paymentMethod) throws CarrierNotAvailableException, RemoteException;
 
-    UUID buyWithFullCarrierDTO(List<SoundCarrierDTO> soundCarriers, String paymentMethod) throws CarrierNotAvailableException, RemoteException;
+    UUID buyWithShoppingCart(List<ShoppingCartProductDTO> cartDtos, String paymentMethod) throws CarrierNotAvailableException, RemoteException;
 }
