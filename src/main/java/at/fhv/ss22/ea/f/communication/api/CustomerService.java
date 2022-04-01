@@ -5,12 +5,11 @@ import at.fhv.ss22.ea.f.communication.dto.CustomerDTO;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 public interface CustomerService extends Remote {
 
-    Optional<CustomerDTO> customerById(UUID uuid) throws RemoteException;
+    CustomerDTO customerById(UUID uuid) throws RemoteException;
 
     List<CustomerDTO> customerListByIds(List<UUID> uuidList) throws RemoteException;
 
