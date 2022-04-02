@@ -1,13 +1,16 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public class SaleItemDTO implements Serializable {
     private String productName;
     private String artistName;
+    private UUID soundCarrierId;
     private String soundCarrierName;
     private int amountOfCarriers;
     private float pricePerCarrier;
+    private boolean isRefunded;
 
     private SaleItemDTO() {}
 
@@ -32,6 +35,11 @@ public class SaleItemDTO implements Serializable {
             return this;
         }
 
+        public Builder withSoundCarrierId(UUID soundCarrierId) {
+            this.instance.soundCarrierId = soundCarrierId;
+            return this;
+        }
+
         public Builder withSoundCarrierName(String soundCarrierName) {
             this.instance.soundCarrierName = soundCarrierName;
             return this;
@@ -44,6 +52,11 @@ public class SaleItemDTO implements Serializable {
 
         public Builder withPricePerCarrier(float pricePerCarrier) {
             this.instance.pricePerCarrier = pricePerCarrier;
+            return this;
+        }
+
+        public Builder withIsRefunded(boolean isRefunded) {
+            this.instance.isRefunded = isRefunded;
             return this;
         }
 
@@ -60,6 +73,10 @@ public class SaleItemDTO implements Serializable {
         return artistName;
     }
 
+    public UUID getSoundCarrierId() {
+        return soundCarrierId;
+    }
+
     public String getSoundCarrierName() {
         return soundCarrierName;
     }
@@ -70,5 +87,9 @@ public class SaleItemDTO implements Serializable {
 
     public float getPricePerCarrier() {
         return pricePerCarrier;
+    }
+
+    public boolean isRefunded() {
+        return isRefunded;
     }
 }
