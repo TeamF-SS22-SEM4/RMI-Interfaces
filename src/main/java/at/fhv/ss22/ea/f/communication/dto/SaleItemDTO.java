@@ -10,7 +10,7 @@ public class SaleItemDTO implements Serializable {
     private String soundCarrierName;
     private int amountOfCarriers;
     private float pricePerCarrier;
-    private boolean isRefunded;
+    private int refundedAmount;
 
     private SaleItemDTO() {}
 
@@ -55,8 +55,8 @@ public class SaleItemDTO implements Serializable {
             return this;
         }
 
-        public Builder withIsRefunded(boolean isRefunded) {
-            this.instance.isRefunded = isRefunded;
+        public Builder withRefundedAmount(int refundedAmount) {
+            this.instance.refundedAmount = refundedAmount;
             return this;
         }
 
@@ -89,7 +89,7 @@ public class SaleItemDTO implements Serializable {
         return pricePerCarrier;
     }
 
-    public boolean isRefunded() {
-        return isRefunded;
+    public int getRefundedAmount() {
+        return refundedAmount;
     }
 }
