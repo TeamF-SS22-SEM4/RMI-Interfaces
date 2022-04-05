@@ -14,11 +14,11 @@ public interface BuyingService extends Remote {
 
     /**@param soundCarriers A list of id's of sound carriers and amount which will be bought.
      * @param paymentMethod The name of the method with which the sale is paid.
-     * @return The Sale-Id corresponding to the sale that was just completed.
+     * @return The Invoice number corresponding to the sale that was just completed.
      * @throws CarrierNotAvailableException If an invalid id was given or too large an amount.
      * @throws RemoteException
      */
-    UUID buy(List<SoundCarrierAmountDTO> soundCarriers, String paymentMethod) throws CarrierNotAvailableException, RemoteException;
+    String buy(List<SoundCarrierAmountDTO> soundCarriers, String paymentMethod) throws CarrierNotAvailableException, RemoteException;
 
-    UUID buyWithShoppingCart(List<ShoppingCartProductDTO> cartDtos, String paymentMethod) throws CarrierNotAvailableException, RemoteException;
+    String buyWithShoppingCart(List<ShoppingCartProductDTO> cartDtos, String paymentMethod) throws CarrierNotAvailableException, RemoteException;
 }

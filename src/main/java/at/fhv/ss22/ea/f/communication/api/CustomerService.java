@@ -14,5 +14,4 @@ public interface CustomerService extends Remote {
     List<CustomerDTO> customerListByIds(List<UUID> uuidList) throws RemoteException;
 
     List<CustomerDTO> search(String query) throws RemoteException;
-
 }
