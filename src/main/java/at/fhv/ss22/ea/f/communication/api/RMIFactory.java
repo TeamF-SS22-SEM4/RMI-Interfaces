@@ -11,4 +11,6 @@ public interface RMIFactory extends Remote {
     SaleSearchService getSaleSearchService() throws RemoteException;
 
     RefundSaleService getRefundedSaleService() throws RemoteException;
+
+    AuthenticationService getAuthenticationService() throws RemoteException;
 }
