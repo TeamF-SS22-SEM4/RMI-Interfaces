@@ -4,6 +4,8 @@ import at.fhv.ss22.ea.f.communication.dto.ShoppingCartProductDTO;
 import at.fhv.ss22.ea.f.communication.dto.SoundCarrierAmountDTO;
 import at.fhv.ss22.ea.f.communication.dto.SoundCarrierDTO;
 import at.fhv.ss22.ea.f.communication.exception.CarrierNotAvailableException;
+import at.fhv.ss22.ea.f.communication.exception.NoPermissionForOperation;
+import at.fhv.ss22.ea.f.communication.exception.SessionExpired;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -18,7 +20,7 @@ public interface BuyingService extends Remote {
      * @throws CarrierNotAvailableException If an invalid id was given or too large an amount.
      * @throws RemoteException
      */
-    String buy(List<SoundCarrierAmountDTO> soundCarriers, String paymentMethod) throws CarrierNotAvailableException, RemoteException;
+    String buy(String sessionId, List<SoundCarrierAmountDTO> soundCarriers, String paymentMethod) throws CarrierNotAvailableException, RemoteException, SessionExpired, NoPermissionForOperation;
 
-    String buyWithShoppingCart(List<ShoppingCartProductDTO> cartDtos, String paymentMethod) throws CarrierNotAvailableException, RemoteException;
+    String buyWithShoppingCart(String sessionId, List<ShoppingCartProductDTO> cartDtos, String paymentMethod) throws CarrierNotAvailableException, RemoteException, SessionExpired, NoPermissionForOperation;
 }
