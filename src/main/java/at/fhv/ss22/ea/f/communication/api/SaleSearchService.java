@@ -8,5 +8,6 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface SaleSearchService extends Remote {
-    SaleDTO saleByInvoiceNumber(String sessionId, String invoiceNumber) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    // String sessionId, String invoiceNumber
+    SaleDTO saleByInvoiceNumber(String invoiceNumber) throws RemoteException, SessionExpired, NoPermissionForOperation;
 }

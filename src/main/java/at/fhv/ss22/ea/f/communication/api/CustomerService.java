@@ -11,9 +11,12 @@ import java.util.UUID;
 
 public interface CustomerService extends Remote {
 
-    CustomerDTO customerById(String sessionId, UUID uuid) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    // String sessionId, UUID uuid
+    CustomerDTO customerById(UUID uuid) throws RemoteException, SessionExpired, NoPermissionForOperation;
 
-    List<CustomerDTO> customerListByIds(String sessionId, List<UUID> uuidList) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    // String sessionId, List<UUID> uuidList
+    List<CustomerDTO> customerListByIds(List<UUID> uuidList) throws RemoteException, SessionExpired, NoPermissionForOperation;
 
-    List<CustomerDTO> search(String sessionId, String query) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    // String sessionId, String query
+    List<CustomerDTO> search(String query) throws RemoteException, SessionExpired, NoPermissionForOperation;
 }
