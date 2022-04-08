@@ -9,6 +9,5 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 public interface RefundSaleService extends Remote {
-    // String sessionId, String invoiceNumber, List<RefundedSaleItemDTO> refundedSaleItems
-    void refundSale(String invoiceNumber, List<RefundedSaleItemDTO> refundedSaleItems) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    void refundSale(String sessionId, String invoiceNumber, List<RefundedSaleItemDTO> refundedSaleItems) throws RemoteException, SessionExpired, NoPermissionForOperation;
 }

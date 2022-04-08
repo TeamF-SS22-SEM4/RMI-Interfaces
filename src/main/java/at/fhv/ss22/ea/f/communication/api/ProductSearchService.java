@@ -13,9 +13,7 @@ import java.util.UUID;
 
 public interface ProductSearchService extends Remote {
 
-    // String sessionId, UUID productId
-    ProductDetailsDTO productById(UUID productId) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    ProductDetailsDTO productById(String sessionId, UUID productId) throws RemoteException, SessionExpired, NoPermissionForOperation;
 
-    // String sessionId, String query
-    List<ProductOverviewDTO> fullTextSearch(String query) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    List<ProductOverviewDTO> fullTextSearch(String sessionId,String query) throws RemoteException, SessionExpired, NoPermissionForOperation;
 }

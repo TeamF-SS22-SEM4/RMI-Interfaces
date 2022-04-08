@@ -20,9 +20,7 @@ public interface BuyingService extends Remote {
      * @throws CarrierNotAvailableException If an invalid id was given or too large an amount.
      * @throws RemoteException
      */
-    // String sessionId, List<SoundCarrierAmountDTO> soundCarriers, String paymentMethod
-    String buy(List<SoundCarrierAmountDTO> soundCarriers, String paymentMethod, UUID customerId) throws CarrierNotAvailableException, RemoteException, SessionExpired, NoPermissionForOperation;
+    String buy(String sessionId, List<SoundCarrierAmountDTO> soundCarriers, String paymentMethod, UUID customerId) throws CarrierNotAvailableException, RemoteException, SessionExpired, NoPermissionForOperation;
 
-    // List<ShoppingCartProductDTO> cartDtos, String paymentMethod
-    String buyWithShoppingCart(List<ShoppingCartProductDTO> cartDtos, String paymentMethod, UUID customerId) throws CarrierNotAvailableException, RemoteException, SessionExpired, NoPermissionForOperation;
+    String buyWithShoppingCart(String sessionId, List<ShoppingCartProductDTO> cartDtos, String paymentMethod, UUID customerId) throws CarrierNotAvailableException, RemoteException, SessionExpired, NoPermissionForOperation;
 }
