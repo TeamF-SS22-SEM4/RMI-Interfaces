@@ -13,7 +13,7 @@ public interface CustomerService extends Remote {
 
     CustomerDTO customerById(String sessionId, UUID uuid) throws RemoteException, SessionExpired, NoPermissionForOperation;
 
-    List<CustomerDTO> customerListByIds(List<UUID> uuidList) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    List<CustomerDTO> customerListByIds(String sessionId, List<UUID> uuidList) throws RemoteException, SessionExpired, NoPermissionForOperation;
 
     List<CustomerDTO> search(String sessionId, String query) throws RemoteException, SessionExpired, NoPermissionForOperation;
 }
