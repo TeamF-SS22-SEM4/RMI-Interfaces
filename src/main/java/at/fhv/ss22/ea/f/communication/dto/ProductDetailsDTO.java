@@ -6,6 +6,8 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class ProductDetailsDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private UUID productId;
     private String name;
     private String artistName;

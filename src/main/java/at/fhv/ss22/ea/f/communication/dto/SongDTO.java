@@ -3,6 +3,8 @@ package at.fhv.ss22.ea.f.communication.dto;
 import java.io.Serializable;
 
 public class SongDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String title;
     private String duration;
 

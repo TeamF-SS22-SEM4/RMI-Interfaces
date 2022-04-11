@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.UUID;
 
 public class SoundCarrierAmountDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private int amount;
     private UUID carrierId;
 

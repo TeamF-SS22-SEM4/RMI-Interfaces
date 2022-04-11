@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.UUID;
 
 public class SaleItemDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String productName;
     private String artistName;
     private UUID soundCarrierId;
