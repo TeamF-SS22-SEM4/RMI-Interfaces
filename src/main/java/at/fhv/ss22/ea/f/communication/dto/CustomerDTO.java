@@ -5,6 +5,8 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class CustomerDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private UUID customerId;
     private String givenName;
     private String familyName;
