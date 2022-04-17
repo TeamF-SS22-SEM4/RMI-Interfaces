@@ -2,13 +2,15 @@ package at.fhv.ss22.ea.f.communication.dto;
 
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class LoginResultDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String sessionId;
-    private List<String> roles;
+    private List<String> roles = new LinkedList<>();
+    private List<String> topicNames = new LinkedList<>();
 
     public String getSessionId() {
         return sessionId;
@@ -16,6 +18,10 @@ public class LoginResultDTO implements Serializable {
 
     public List<String> getRoles() {
         return Collections.unmodifiableList(roles);
+    }
+
+    public List<String> getTopicNames() {
+        return Collections.unmodifiableList(topicNames);
     }
 
     public static Builder builder() {
@@ -27,6 +33,11 @@ public class LoginResultDTO implements Serializable {
 
         public Builder() {
             this.instance = new LoginResultDTO();
+        }
+
+        public Builder withTopicNames(List<String> topicNames) {
+            this.instance.topicNames = topicNames;
+            return this;
         }
 
         public Builder withId(String sessionId) {
