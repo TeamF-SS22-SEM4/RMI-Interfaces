@@ -10,7 +10,7 @@ public class MessageDTO implements Serializable {
     private String title;
     private String content;
 
-    public Builder builder() {
+    public static Builder builder() {
         return new Builder();
     }
 
