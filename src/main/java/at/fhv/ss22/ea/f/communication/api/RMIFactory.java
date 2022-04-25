@@ -17,4 +17,6 @@ public interface RMIFactory extends Remote {
     AuthenticationService getAuthenticationService() throws RemoteException;
 
     MessagingService getMessagingService() throws RemoteException;
+
+    OrderingService getOrderingService() throws RemoteException;
 }
