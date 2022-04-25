@@ -9,11 +9,16 @@ public class LoginResultDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String sessionId;
+    private String employeeId;
     private List<String> roles = new LinkedList<>();
     private List<String> topicNames = new LinkedList<>();
 
     public String getSessionId() {
         return sessionId;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
     }
 
     public List<String> getRoles() {
@@ -44,6 +49,12 @@ public class LoginResultDTO implements Serializable {
             this.instance.sessionId = sessionId;
             return this;
         }
+
+        public Builder withEmployeeId(String employeeId) {
+            this.instance.employeeId = employeeId;
+            return this;
+        }
+
         public Builder withRoles(List<String> roles) {
             this.instance.roles = roles;
             return this;
