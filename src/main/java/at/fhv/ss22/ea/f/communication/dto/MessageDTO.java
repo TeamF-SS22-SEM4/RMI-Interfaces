@@ -7,6 +7,7 @@ public class MessageDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String topicName;
+    private String employeeUsername;
     private String title;
     private String content;
 
@@ -33,6 +34,10 @@ public class MessageDTO implements Serializable {
             this.instance.title = title;
             return this;
         }
+        public Builder withEmployeeUsername(String username) {
+            this.instance.employeeUsername = username;
+            return this;
+        }
         public Builder withContent(String content) {
             this.instance.content = content;
             return this;
@@ -52,5 +57,9 @@ public class MessageDTO implements Serializable {
 
     public String getContent() {
         return content;
+    }
+
+    public String getEmployeeUsername() {
+        return employeeUsername;
     }
 }
