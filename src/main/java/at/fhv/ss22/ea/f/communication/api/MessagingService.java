@@ -15,7 +15,7 @@ public interface MessagingService extends Remote {
 
     List<String> getSubscribedTopics(String sessionId) throws RemoteException, SessionExpired, NoPermissionForOperation;
 
-    void updateLastViewed(LocalDateTime lastViewedMessages);
+    void updateLastViewed(String sessionId, LocalDateTime lastViewedMessages) throws RemoteException, SessionExpired, NoPermissionForOperation;
 
-    LocalDateTime getLastViewed();
+    LocalDateTime getLastViewed(String sessionId) throws RemoteException, SessionExpired, NoPermissionForOperation;
 }
