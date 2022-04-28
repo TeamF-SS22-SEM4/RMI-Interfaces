@@ -17,6 +17,7 @@ public class ProductDetailsDTO implements Serializable {
     private String duration;
     private List<SongDTO> songs;
     private List<SoundCarrierDTO> soundCarriers;
+    private String location;
 
     private ProductDetailsDTO() {}
 
@@ -31,6 +32,10 @@ public class ProductDetailsDTO implements Serializable {
             this.instance = new ProductDetailsDTO();
         }
 
+        public Builder withLocation(String location) {
+            this.instance.location = location;
+            return this;
+        }
         public Builder withSoundCarriers(List<SoundCarrierDTO> soundCarriers) {
             this.instance.soundCarriers = soundCarriers;
             return this;
@@ -116,5 +121,9 @@ public class ProductDetailsDTO implements Serializable {
 
     public List<SoundCarrierDTO> getSoundCarriers() {
         return soundCarriers;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }

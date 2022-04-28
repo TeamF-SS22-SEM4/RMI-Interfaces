@@ -1,7 +1,6 @@
 package at.fhv.ss22.ea.f.communication.dto;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -12,6 +11,8 @@ public class ProductOverviewDTO implements Serializable {
     private String name;
     private String artistName;
     private String releaseYear;
+    private String genre;
+    private float smallestPrice;
 
     // Private constructor so the builder is required to create an object
     private ProductOverviewDTO() {}
@@ -27,6 +28,15 @@ public class ProductOverviewDTO implements Serializable {
             this.instance = new ProductOverviewDTO();
         }
 
+
+        public Builder withSmallestPrice(float price) {
+            this.instance.smallestPrice = price;
+            return this;
+        }
+        public Builder withGenre(String genre) {
+            this.instance.genre = genre;
+            return this;
+        }
         public Builder withId(UUID id) {
             this.instance.productId = id;
             return this;
@@ -70,5 +80,13 @@ public class ProductOverviewDTO implements Serializable {
 
     public String getReleaseYear() {
         return this.releaseYear;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public float getSmallestPrice() {
+        return smallestPrice;
     }
 }
