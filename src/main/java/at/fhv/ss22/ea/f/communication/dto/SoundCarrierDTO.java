@@ -10,6 +10,7 @@ public class SoundCarrierDTO implements Serializable {
     private String soundCarrierName;
     private int amountAvailable;
     private float pricePerCarrier;
+    private String location;
 
     private SoundCarrierDTO() {}
 
@@ -22,6 +23,11 @@ public class SoundCarrierDTO implements Serializable {
 
         public Builder() {
             this.instance = new SoundCarrierDTO();
+        }
+
+        public Builder withLocation(String location) {
+            this.instance.location = location;
+            return this;
         }
 
         public Builder withSoundCarrierId(UUID soundCarrierId) {
@@ -63,5 +69,9 @@ public class SoundCarrierDTO implements Serializable {
 
     public float getPricePerCarrier() {
         return pricePerCarrier;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }
