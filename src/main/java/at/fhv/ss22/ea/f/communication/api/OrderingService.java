@@ -13,5 +13,4 @@ public interface OrderingService extends Remote {
 
     boolean approveOrder(String sessionId, SoundCarrierOrderDTO orderDTO) throws RemoteException, SessionExpired, NoPermissionForOperation;
 
-    boolean denyOrder(String sessionId, SoundCarrierOrderDTO orderDTO) throws RemoteException, SessionExpired, NoPermissionForOperation;
 }
