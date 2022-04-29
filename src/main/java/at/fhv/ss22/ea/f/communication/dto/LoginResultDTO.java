@@ -10,6 +10,7 @@ public class LoginResultDTO implements Serializable {
 
     private String sessionId;
     private String employeeId;
+    private String username;
     private List<String> roles = new LinkedList<>();
     private List<String> topicNames = new LinkedList<>();
 
@@ -19,6 +20,10 @@ public class LoginResultDTO implements Serializable {
 
     public String getEmployeeId() {
         return employeeId;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public List<String> getRoles() {
@@ -52,6 +57,11 @@ public class LoginResultDTO implements Serializable {
 
         public Builder withEmployeeId(String employeeId) {
             this.instance.employeeId = employeeId;
+            return this;
+        }
+
+        public Builder withUsername(String username) {
+            this.instance.username = username;
             return this;
         }
 
