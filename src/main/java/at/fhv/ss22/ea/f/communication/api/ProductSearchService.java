@@ -6,14 +6,14 @@ import at.fhv.ss22.ea.f.communication.dto.ProductOverviewDTO;
 import at.fhv.ss22.ea.f.communication.exception.NoPermissionForOperation;
 import at.fhv.ss22.ea.f.communication.exception.SessionExpired;
 
-import java.rmi.Remote;
-import java.rmi.RemoteException;
+import javax.ejb.Remote;
 import java.util.List;
 import java.util.UUID;
 
-public interface ProductSearchService extends Remote {
+@Remote
+public interface ProductSearchService {
 
-    ProductDetailsDTO productById(String sessionId, UUID productId) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    ProductDetailsDTO productById(String sessionId, UUID productId) throws SessionExpired, NoPermissionForOperation;
 
-    List<ProductOverviewDTO> fullTextSearch(String sessionId,String query) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    List<ProductOverviewDTO> fullTextSearch(String sessionId,String query) throws SessionExpired, NoPermissionForOperation;
 }

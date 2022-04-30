@@ -4,13 +4,13 @@ import at.fhv.ss22.ea.f.communication.dto.SoundCarrierOrderDTO;
 import at.fhv.ss22.ea.f.communication.exception.NoPermissionForOperation;
 import at.fhv.ss22.ea.f.communication.exception.SessionExpired;
 
-import java.rmi.Remote;
-import java.rmi.RemoteException;
+import javax.ejb.Remote;
 
-public interface OrderingService extends Remote {
+@Remote
+public interface OrderingService {
 
-    boolean placeOrder(String sessionId, SoundCarrierOrderDTO orderDTO) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    boolean placeOrder(String sessionId, SoundCarrierOrderDTO orderDTO) throws SessionExpired, NoPermissionForOperation;
 
-    boolean approveOrder(String sessionId, SoundCarrierOrderDTO orderDTO) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    boolean approveOrder(String sessionId, SoundCarrierOrderDTO orderDTO) throws SessionExpired, NoPermissionForOperation;
 
 }

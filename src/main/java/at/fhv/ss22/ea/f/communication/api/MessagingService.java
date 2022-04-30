@@ -4,18 +4,18 @@ import at.fhv.ss22.ea.f.communication.dto.MessageDTO;
 import at.fhv.ss22.ea.f.communication.exception.NoPermissionForOperation;
 import at.fhv.ss22.ea.f.communication.exception.SessionExpired;
 
-import java.rmi.Remote;
-import java.rmi.RemoteException;
+import javax.ejb.Remote;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public interface MessagingService extends Remote {
+@Remote
+public interface MessagingService {
 
-    boolean publish(String sessionId, MessageDTO message) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    boolean publish(String sessionId, MessageDTO message) throws SessionExpired, NoPermissionForOperation;
 
-    List<String> getSubscribedTopics(String sessionId) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    List<String> getSubscribedTopics(String sessionId) throws SessionExpired, NoPermissionForOperation;
 
-    void updateLastViewed(String sessionId, LocalDateTime lastViewedMessages) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    void updateLastViewed(String sessionId, LocalDateTime lastViewedMessages) throws SessionExpired, NoPermissionForOperation;
 
-    LocalDateTime getLastViewed(String sessionId) throws RemoteException, SessionExpired, NoPermissionForOperation;
+    LocalDateTime getLastViewed(String sessionId) throws SessionExpired, NoPermissionForOperation;
 }
