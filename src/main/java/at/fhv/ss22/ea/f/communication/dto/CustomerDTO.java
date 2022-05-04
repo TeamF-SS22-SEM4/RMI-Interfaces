@@ -18,6 +18,9 @@ public class CustomerDTO implements Serializable {
     private String email;
     private String phoneNumber;
     private String mobileNumber;
+    private String creditCardType;
+    private String creditCardNumber;
+    private String cvc;
 
     private CustomerDTO() {}
 
@@ -81,6 +84,21 @@ public class CustomerDTO implements Serializable {
             this.customer.mobileNumber = mobileNumber;
             return this;
         }
+
+        public Builder creditCardType(String creditCardType) {
+            this.customer.creditCardType = creditCardType;
+            return this;
+        }
+
+        public Builder creditCardNumber(String creditCardNumber) {
+            this.customer.creditCardNumber = creditCardNumber;
+            return this;
+        }
+
+        public Builder cvc(String cvc) {
+            this.customer.cvc = cvc;
+            return this;
+        }
     }
 
     public UUID getCustomerId() {
@@ -125,5 +143,17 @@ public class CustomerDTO implements Serializable {
 
     public String getMobileNumber() {
         return mobileNumber;
+    }
+
+    public String getCreditCardType() {
+        return creditCardType;
+    }
+
+    public String getCreditCardNumber() {
+        return creditCardNumber;
+    }
+
+    public String getCvc() {
+        return cvc;
     }
 }
