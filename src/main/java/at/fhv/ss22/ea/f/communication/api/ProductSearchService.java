@@ -13,7 +13,7 @@ import java.util.UUID;
 @Remote
 public interface ProductSearchService {
 
-    ProductDetailsDTO productById(String sessionId, UUID productId) throws SessionExpired, NoPermissionForOperation;
+    ProductDetailsDTO productById(UUID productId) throws SessionExpired, NoPermissionForOperation;
 
-    List<ProductOverviewDTO> fullTextSearch(String sessionId,String query) throws SessionExpired, NoPermissionForOperation;
+    List<ProductOverviewDTO> fullTextSearch(String query) throws SessionExpired, NoPermissionForOperation;
 }
