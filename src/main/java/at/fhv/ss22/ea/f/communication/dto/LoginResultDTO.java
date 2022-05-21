@@ -9,7 +9,7 @@ public class LoginResultDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String sessionId;
-    private String employeeId;
+    private String employeeId; // TODO: Change to userId
     private String username;
     private List<String> roles = new LinkedList<>();
     private List<String> topicNames = new LinkedList<>();
