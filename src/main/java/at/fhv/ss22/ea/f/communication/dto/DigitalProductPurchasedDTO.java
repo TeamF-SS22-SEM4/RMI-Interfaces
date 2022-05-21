@@ -61,6 +61,10 @@ public class DigitalProductPurchasedDTO implements Serializable {
         return userId;
     }
 
+    public String getAlbumName() {
+        return albumName;
+    }
+
     public List<SongDTO> getPurchasedSongs() {
         return purchasedSongs;
     }
