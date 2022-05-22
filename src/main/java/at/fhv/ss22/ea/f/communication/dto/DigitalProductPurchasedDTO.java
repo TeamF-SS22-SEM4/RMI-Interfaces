@@ -7,11 +7,10 @@ import java.util.Objects;
 public class DigitalProductPurchasedDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    private String userId;
+    private String username;
 
     private String albumName;
     private List<SongDTO> purchasedSongs;
-    private List<String> artistNames;
 
     private DigitalProductPurchasedDTO() {
     }
@@ -27,8 +26,8 @@ public class DigitalProductPurchasedDTO implements Serializable {
             this.instance = new DigitalProductPurchasedDTO();
         }
 
-        public Builder withUserId(String userId) {
-            this.instance.userId = userId;
+        public Builder withUsername(String username) {
+            this.instance.username = username;
             return this;
         }
 
@@ -42,23 +41,17 @@ public class DigitalProductPurchasedDTO implements Serializable {
             return this;
         }
 
-        public Builder withArtistNames(List<String> artistNames) {
-            this.instance.artistNames = artistNames;
-            return this;
-        }
-
         public DigitalProductPurchasedDTO build() {
-            Objects.requireNonNull(this.instance.userId, "userId must be set in DigitalProductPurchasedDTO");
+            Objects.requireNonNull(this.instance.username, "username must be set in DigitalProductPurchasedDTO");
             Objects.requireNonNull(this.instance.albumName, "albumName must be set in DigitalProductPurchasedDTO");
             Objects.requireNonNull(this.instance.purchasedSongs, "purchasedSongs must be set in DigitalProductPurchasedDTO");
-            Objects.requireNonNull(this.instance.artistNames, "artistName must be set in DigitalProductPurchasedDTO");
 
             return this.instance;
         }
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
     public String getAlbumName() {
@@ -67,9 +60,5 @@ public class DigitalProductPurchasedDTO implements Serializable {
 
     public List<SongDTO> getPurchasedSongs() {
         return purchasedSongs;
-    }
-
-    public List<String> getArtistNames() {
-        return artistNames;
     }
 }
