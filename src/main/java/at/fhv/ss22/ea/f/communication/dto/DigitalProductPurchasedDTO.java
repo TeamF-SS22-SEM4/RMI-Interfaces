@@ -12,6 +12,8 @@ public class DigitalProductPurchasedDTO implements Serializable {
     private String albumName;
     private List<SongDTO> purchasedSongs;
 
+    private String artists;
+
     private DigitalProductPurchasedDTO() {
     }
 
@@ -41,6 +43,11 @@ public class DigitalProductPurchasedDTO implements Serializable {
             return this;
         }
 
+        public Builder withArtists(String artists) {
+            this.instance.artists = artists;
+            return this;
+        }
+
         public DigitalProductPurchasedDTO build() {
             Objects.requireNonNull(this.instance.username, "username must be set in DigitalProductPurchasedDTO");
             Objects.requireNonNull(this.instance.albumName, "albumName must be set in DigitalProductPurchasedDTO");
@@ -60,5 +67,9 @@ public class DigitalProductPurchasedDTO implements Serializable {
 
     public List<SongDTO> getPurchasedSongs() {
         return purchasedSongs;
+    }
+
+    public String getArtists() {
+        return artists;
     }
 }
