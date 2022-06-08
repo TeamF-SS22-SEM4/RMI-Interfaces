@@ -9,6 +9,7 @@ public class SaleDTO implements Serializable {
     private String invoiceNumber;
     private List<SaleItemDTO> saleItems;
     private double totalPrice;
+    private String dateOfSale;
 
     private SaleDTO() {}
 
@@ -38,6 +39,11 @@ public class SaleDTO implements Serializable {
             return this;
         }
 
+        public Builder withDateOfSale(String date) {
+            this.instance.dateOfSale = date;
+            return this;
+        }
+
         public SaleDTO build() {
             return this.instance;
         }
@@ -53,5 +59,9 @@ public class SaleDTO implements Serializable {
 
     public double getTotalPrice() {
         return totalPrice;
+    }
+
+    public String getDateOfSale() {
+        return dateOfSale;
     }
 }
